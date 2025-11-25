@@ -1,10 +1,16 @@
-# The Alvin Programming Language
-
-<img src="https://github.com/Antonio-Iijima/alvin/blob/main/logo.png?raw=true" width=30%>
+<p align=center><img src="https://github.com/Antonio-Iijima/ALVIN/blob/main/logo.png?raw=true" width=75%></p>
 
 ---
 
+
+# THE ALVIN PROGRAMMING LANGUAGE
+
+
+ALVIN seeks to unify multiple diverse programming paradigms through a consistent syntax and an intuitive semantics, and inherits many of its design principles and features from Lisp.
+
+
 ## Table of Contents
+
 
 - [Installation](#installation)
 - [Usage](#usage)
@@ -12,7 +18,9 @@
 - [Resources](#resources)
 - [License](#license)
 
+
 ## Installation
+
 
 Check if you have Python installed:
 
@@ -25,53 +33,79 @@ If not, install it from the [Python website](https://www.python.org/).
 Once Python is installed, clone the repo:
 
 ```
-$ git clone https://github.com/Antonio-Iijima/alvin.git
-$ cd alvin/src/
+$ git clone https://github.com/Antonio-Iijima/ALVIN.git
+$ cd ALVIN
 ```
 
-You are now ready to start programming with Alvin.
+ALVIN uses a virtual environment provided by Python's `venv` module. In order to run the setup script, execute the following:
+
+```
+$ chmod 755 alvin
+$ ./alvin --build
+```
+
+You are now ready to start programming with ALVIN. Run `./alvin --help` for further information, or browse the documentation under [Resources](#resources).
+
 
 ## Usage
 
-The Alvin interpreter can be run interactively using the `-i` flag, or it can be used to run a file. To load files with the `-i` flag, provide their locations as commandline arguments to `main.py`. Several example files have been included with the project in the `examples/` folder.
+
+The ALVIN interpreter can be run in many different ways. To start an interactive interpreter session, use the `-i` flag:
 
 ```
-$ python3 main.py ../examples/lisp.alv -i
-
-╔════════════════════════╗
-║ Welcome to the Alvin   ║
-║  Programming Language  ║
-╚════════════════════════╝
-
-Alvin v3.2.5, running in interactive mode
+$ ./alvin -i
+ALVIN v3.0, interactive
 Enter 'help' to show further information
-(α)
+(Ω)
 ```
+
+ALVIN also includes a built-in, terminal-based IDE, which can be run using `./alvin --ide`.
+
+To run ALVIN from any directory, add the following line to your `~/.bashrc` file, replacing `~/PATH/TO/ALVIN` with the absolute path to the project, and restart the terminal:
+
+```
+alvin() { . ~/PATH/TO/ALVIN/alvin $@; }
+```
+
+You should now be able to use `alvin <flags>` directly as a command without needing to `cd` into the project directory.
+
 
 ## Contributing
 
-If you have ideas for interesting features, find or fix a bug, or even notice a typo, please feel free to contribute via a pull request; however, as of now Alvin is no longer under active development (i.e. I will not be adding any new features, continued updates, etc.).
+
+If you have ideas for interesting features, find or fix a bug, or notice a typo, please feel free to contribute via a pull request.
+
 
 ## Resources
 
-In a nutshell, Alvin is a Lisp-family, primarily functional programming language with the following features:
 
-- Cambridge Polish syntax
-- Homoiconicity
+For a comprehensive deep dive into the features, usage, and implementation of ALVIN, check out the [documentation](https://antonio-iijima.github.io/ALVIN/).
+
+ALVIN is under active development; the following programming paradigms have varying degrees of functionality:
+
+- Imperative
+  - Procedural
+- Declarative
+  - Logic
+- Functional
+- Object-oriented
+- Metaprogramming
+  - Reflective
+
+The following is a brief overview of ALVIN's current language features:
+
+- Cambridge Polish syntax and homoiconicity
 - Applicative-order evaluation
 - Side-effect
 - Dynamic binding
-- Dynamic scoping
-- Dynamic typing
-- First-order functions and closure
+- Dynamic and manual scoping
+- Latent and optionally strict variable typing
+- First-order functions and closures
+- Objects
 - Reflexive lambda functions and anonymous recursion
 - Dynamic language extension
-- Objects (templates)
 
-The unique contribution of Alvin is the ability to permanently modify the language through the use of extensions.
-
-For more information and a more thorough guide to the usage and capabilities of Alvin, please refer to the [Wiki](https://github.com/Antonio-Iijima/alvin/wiki).
 
 ## License
 
-Alvin is licensed under a [GNU General Public License](https://github.com/Antonio-Iijima/alvin/blob/main/LICENSE).
+ALVIN is licensed under a [GNU General Public License](https://github.com/Antonio-Iijima/alvin/blob/main/LICENSE).

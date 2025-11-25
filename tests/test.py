@@ -7,7 +7,7 @@ def test(filepath: str, args: list = []) -> None:
     """Recursively test files and directories."""
 
     # Test files with input.txt as standard sample input
-    if os.path.isfile(filepath) and filepath.endswith('.alv'):
+    if os.path.isfile(filepath) and filepath.endswith('.op'):
         os.system(f"echo '\nFILE: {filepath}'")
         os.system(f"coverage run --parallel-mode ../src/main.py {filepath} {" ".join(args)} < input.txt && echo")
 
